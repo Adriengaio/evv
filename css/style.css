@@ -1,0 +1,288 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+body{
+  background: black;
+}
+nav{
+  box-shadow: none;
+}
+
+nav ul a{
+  text-transform: uppercase;
+  font-size: 17px;
+  font-family: 'Open Sans';
+  transition: color 0.3s ease;
+}
+
+nav .brand-logo {
+  left: 10px;
+  max-width: 240px;
+}
+
+nav .brand-logo svg{
+  width:100%;
+}
+
+nav .brand-logo.colorized svg .color{ 
+  fill: #2B2B2B;
+}
+
+nav .brand-logo svg .color{ 
+  fill: #fefefe;
+  transition: fill 0.3s ease;
+}
+
+nav ul.center li {
+  float: none;
+  display: inline-block;
+  color: white;
+}
+
+#sidenav-overlay{
+  z-index: 995;
+}
+
+nav ul a:hover{
+  background: transparent;
+}
+
+nav ul.center li:hover a{
+  color: #993333;
+}
+.colorized ul.center li a{
+  color: #2B2B2B;
+}
+
+.navbar-fixed{
+  height: 0;
+}
+
+.padding5 {
+    padding: 0 5px;
+}
+
+.slid {
+  position: absolute;
+  top:0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+.slided{
+  z-index: 2;
+}
+.slid .slid-first, .slid .slid-second, .slid .slid-third{
+  transform: translate3d(100%,0,0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.slided .slid-first, .slided .slid-second, .slided .slid-third{
+  transform: translate3d(0,0,0);
+}
+.slid-first{
+  transition: transform 0.8s ease;
+}
+.slid-second{
+  transition: transform 0.6s 0.2s ease;
+}
+.slid-third{
+  transition: transform 0.3s 0.3s ease;
+}
+.slid .border, .slid .text{
+  top: calc(5% + 60px);
+  position: absolute;
+  left: 5%;
+  z-index: 3;
+  height: calc(90vh - 60px);
+  width: 90%;
+}
+.slid .background{
+  background: rgba(0,0,0,0.8);
+}
+.slid .border{
+  border: 5px solid white;
+}
+.slid .text{
+  padding: 5%;
+  font-family: "Quicksand";
+  font-weight: 800;
+  font-size: 19px;
+}
+.slid .text .close-slid{
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background: red;
+}
+.nav-section-arrow .nav-arrow{
+  position: fixed;
+  left: calc(50% - 17px);
+  font-size: 35px;
+}
+.nav-section-arrow .icon-angle-up.nav-arrow {
+  top: 30px;
+}
+.nav-section-arrow .icon-angle-down.nav-arrow {
+  top: calc(100vh - 45px);
+}
+
+.parallax video{
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.slabo{
+  font-family: 'Slabo 27px' !important;
+  line-height: 37px;
+  font-size: 37px;
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+
+.slabo span{
+  position: relative;
+}
+
+.slabo span::before{
+  content: '';
+  z-index: -1;
+  width: 110%;
+  height: 90%;
+  position: absolute;
+  top: 5%;
+  left: -5%;
+  background: rgba(0,0,0,0.5);
+}
+.slabo.r1 span::before {
+  -moz-transform: rotate(-2deg);
+  -webkit-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+.slabo.r03 span::before {
+  -moz-transform: rotate(-0.3deg);
+  -webkit-transform: rotate(-0.3deg);
+  -o-transform: rotate(-0.3deg);
+  -ms-transform: rotate(-0.3deg);
+  transform: rotate(-0.3deg);
+}
+.slabo.r2 span::before {
+  -moz-transform: rotate(1deg);
+  -webkit-transform: rotate(1deg);
+  -o-transform: rotate(1deg);
+  -ms-transform: rotate(1deg);
+  transform: rotate(1deg);
+}
+.slabo.r3 span::before {
+  -moz-transform: rotate(-2.5deg);
+  -webkit-transform: rotate(-2.5deg);
+  -o-transform: rotate(-2.5deg);
+  -ms-transform: rotate(-2.5deg);
+  transform: rotate(-2.5deg);
+}
+.butn.slabo span{
+  font-size: 20px;
+  color: white;
+}
+
+.butn.slabo span::before{
+  background: rgba(149,59,57,0.7);
+}
+
+p {
+  line-height: 2rem;
+}
+
+.opensans{
+  font-family: "opensans"
+}
+
+.flex{
+  display: flex;
+}
+.flex-column.center.flex{
+  height: calc(100vh - 1em);
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+.full-width-img img{
+  width: 100%;
+  height: auto;
+}
+
+.full-height-section{
+  height: calc(100vh - 1em); /*section materialize set 1em of margin-top*/
+}
+
+.parallax-children{
+  z-index: 0;
+}
+
+.transparent{
+  background: transparent;
+}
+.no-padding{
+  padding: none;
+}
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  height: 100vh;
+  line-height: 0;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: relative;
+    top: auto;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .navbar-fixed {
+     height: 0px;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
