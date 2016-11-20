@@ -49,6 +49,7 @@
             if($this.children("video").length){
               $this.children("video")[0].play();
             }
+            actualSection = $($this.parent());
           }else if($this.children("video").length){
             $this.children("video")[0].pause();         
           }
@@ -62,19 +63,23 @@
           if (this.complete) $(this).trigger("load");
         });
 
-        $this.children("video").one("canplay", function() {
-          updateParallax(true);
-          //$this.children("video")[0].ontimeupdate = function($this) {console.log($this)};
-        }).each(function() {
-          if (this.complete) $(this).trigger("load");
-        });
-
+        if(window.innerWidth > 992){
+          $(window).resize(function() {
+            window_width = $(window).width();
+            updateParallax(false);
+          });
+          $this.children("video").one("canplay", function() {
+            updateParallax(true);
+          }).each(function() {
+            if (this.complete) $(this).trigger("load");
+          });
+        }else{
+           $(window).resize(function(e) {
+            e.preventDefault();
+          });
+          $this.children('video').remove();
+        }
         $(window).scroll(function() {
-          window_width = $(window).width();
-          updateParallax(false);
-        });
-
-        $(window).resize(function() {
           window_width = $(window).width();
           updateParallax(false);
         });
@@ -130,7 +135,7 @@
         $this.on("click", function(e) {
           e.preventDefault();
           $('.slid').removeClass('slided');
-          var slid = $this.parents().find('.slid');
+          var slid = $this.parents().find('.slid'+$this.data('slid'));
           $(slid).addClass('slided');
         });
       });
@@ -141,7 +146,7 @@
       return this.each(function(i) {
         var $this = $(this);
         function closeAll () {
-          $('.slid').removeClass('slided');
+          $('.parallax-container').removeClass('slided');
         }
         $this.on("click", function(e) {
           e.preventDefault();
@@ -153,14 +158,44 @@
       });
     };
 }( jQuery ));
+;(function ($) {
+    $.fn.closeNav = function () {
+      return this.each(function(i) {
+        var $this = $(this);
+        $this.on("click", function(e) {
+          $('.button-collapse').sideNav('hide');
+        });
+      });
+    };
+}( jQuery ));
+;(function ($) {
+    $.fn.navArrow = function () {
+      return this.each(function(i) {
+        var $this = $(this);
+        var lastSection = $('.section').last().attr('id').replace('section','');
+        var firstSection = $('.section').first().attr('id').replace('section','');
+        $this.on("click", function(e) {
+          var actualId = $(actualSection.find(".section")).attr('id').replace('section','');
+          ($this.data('direction')) ? actualId ++ : actualId --;
+          if( actualId != undefined && 
+            actualId <= lastSection && 
+            actualId >= firstSection ) 
+          { $('#section'+actualId).animatescroll() }
+        });
+      });
+    };
+}( jQuery ));
 
 (function($){
+  var actualSection;
   $(function(){
     $('.button-collapse').sideNav();
+    $('.nav-arrow').navArrow();
     $('.parallax').parallaxCustom();
     $('.nav-color').updateNav();
     $('.slid-button').slideIn();
     $('.close-slid').closeSlid();
+    $('.closeNav').closeNav();
     $('.animOnScroll').animOnScroll();
   }); // end of document ready
 })(jQuery); // end of jQuery name space

@@ -11,11 +11,14 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
+
+    <!-- ************************************************* MENU ***********************************************-->
+
   <div class="navbar-fixed">
     <nav class="transparent" role="navigation">
       <div class="nav-wrapper colorized">
         <ul class="center hide-on-med-and-down">
-          <a id="logo-container" href="#section1" class="brand-logo left animOnScroll colorized">
+          <a id="logo-container" href="#section0" class="brand-logo left animOnScroll colorized">
               <svg id="svgLogo" version="1.1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" viewBox="0 0 398 120.012" xml:space="preserve">
                 <g id="Calque_2">
                 <g class="color">
@@ -119,65 +122,79 @@
                 </g>
             </svg>
           </a>
-          <li><a class="animOnScroll" href="#section1" >Manifeste</a></li>
+          <li class="marginLeft10"><a class="animOnScroll" href="#section1" >Manifeste</a></li>
           <li><a class="animOnScroll" href="#section2" >Nous</a></li>
           <li><a class="animOnScroll" href="#section3" >Vous</a></li>
           <li><a class="animOnScroll" href="#section4" >Ensemble</a></li>
           <div class="right">
+            <li><a class="animOnScroll padding5" href="#section5" >Contact</a></li>
             <li><a class="padding5" href="#sectionIcon"><i class="icon icon-vimeo"></i></a></li>
             <li><a class="padding5" href="#sectionIcon"><i class="icon icon-fb"></i></a></li>
             <li><a class="padding5" href="#sectionIcon"><i class="icon icon-linkedin"></i></a></li>
           </div>
         </ul>
+        <div class="nav-section-arrow colorized" role="navigation between section">
+          <i class="icon icon-angle-up nav-arrow" data-direction="0"></i>
+          <i class="icon icon-angle-down nav-arrow" data-direction="1"></i>
+        </div>
+          <!-- ************************************************* MENU MOBILE ***********************************************-->
         <ul id="nav-mobile" class="side-nav">
-          <li><a class="animOnScroll" href="#section1" >Manifeste</a></li>
-          <li><a class="animOnScroll" href="#section2" >Nous</a></li>
-          <li><a class="animOnScroll" href="#section3" >Vous</a></li>
-          <li><a class="animOnScroll" href="#section4" >Ensemble</a></li>
-          <li><a class="no-padding" href="#sectionIcon"><i class="icon icon-linkedin"></i></a></li>
-          <li><a class="no-padding" href="#sectionIcon"><i class="icon icon-fb"></i></a></li>
-          <li><a class="no-padding" href="#sectionIcon"><i class="icon icon-vimeo"></i></a></li>
+          <li><a class="animOnScroll closeNav" href="#section1" >Manifeste</a></li>
+          <li><a class="animOnScroll closeNav" href="#section2" >Nous</a></li>
+          <li><a class="animOnScroll closeNav" href="#section3" >Vous</a></li>
+          <li><a class="animOnScroll closeNav" href="#section4" >Ensemble</a></li>
+          <li class="bottom">
+            <a class="no-padding" href="#sectionIcon"><i class="icon icon-linkedin"></i></a>
+            <a class="no-padding" href="#sectionIcon"><i class="icon icon-fb"></i></a>
+            <a class="no-padding" href="#sectionIcon"><i class="icon icon-vimeo"></i></a>
+          </li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="icon icon-menu"></i></a>
       </div>
     </nav>
-    <div class="nav-section-arrow" role="navigation between section">
-      <i class="icon icon-angle-up nav-arrow"></i>
-      <i class="icon icon-angle-down nav-arrow"></i>
+  </div>
+
+    <!-- ************************************************* ACCUEIL ***********************************************-->
+
+  <div class="parallax-container parallax-nested">
+    <div  id="section0" class="section no-pad-bot nav-color">
+      <div class="container">
+        <div class="row center flex full-height-section full-width-img" data-layer="5">
+          <img src="images/logo.svg" class="responsive-img" alt="Page d'accueil Logo">
+        </div>
+      </div>
+    </div> 
+    <div class="parallax">
+      <img src="images/bg.png" alt="Unsplashed background img 0">
     </div>
   </div>
+  
+    <!-- ************************************************* MANIFEST ***********************************************-->
 
-  <div class="parallax-container parallax-nested">
-    <div  id="section1" class="section no-pad-bot nav-color">
-      <div class="container">
-        <div class="row center flex full-height-section full-width-img" data-layer="5">
-          <img src="images/logo.svg" class="responsive-img" alt="Page d'accueil Logo">
+  <div class="parallax-container parallax-nested slid1">
+    <div id="section1" class="section no-pad-bot">
+      <div class="container flex flex-column center">
+        <div class="row center parallax-children" data-layer="5">
+          <div class="col s12 slabo r03"><span>Manifeste</span></div>
         </div>
       </div>
-      <div class="parallax"><img src="images/bg.png" alt="Unsplashed background img 1"></div>
+    </div>
+    <div class="parallax">
+      <img src="images/bg1.png" alt="Unsplashed img 1">
     </div> 
   </div>
 
-  <div class="parallax-container parallax-nested">
-    <div  id="section0" class="section no-pad-bot">
-      <div class="container">
-        <div class="row center flex full-height-section full-width-img" data-layer="5">
-          <img src="images/logo.svg" class="responsive-img" alt="Page d'accueil Logo">
-        </div>
-      </div>
-      <div class="parallax"><img src="images/bg.png" alt="Unsplashed background img 1"></div>
-    </div> 
-  </div>
+  <!-- ************************************************* NOUS ***********************************************-->
 
-  <div class="parallax-container parallax-nested">
+  <div class="parallax-container parallax-nested slid1">
     <div id="section2" class="section no-pad-bot">
       <div class="container flex flex-column center">
-        <div id="bite" class="row center parallax-children" data-layer="5">
+        <div class="row center parallax-children" data-layer="5">
           <div class="col s12 slabo r03"><span>Sans pour autant se la raconter</span></div>
           <div class="col s12 slabo r2"><span>On va se narrer...</span></div>
         </div>
         <div class="row center parallax-children" data-layer="2">
-          <a href="#" class="butn slabo r1"><span>Nous découvrir</span></a>
+          <a href="#" class="butn slabo r1 slid-button" data-slid="1"><span>Nous découvrir</span></a>
         </div>
       </div>
     </div>
@@ -186,10 +203,29 @@
         <source src="video/1.mov">
         Not supported on your browser
       </video>
+      <img class="no-video" src="images/bg2.png" alt="">
+    </div> 
+    <div class="slid">
+      <div class="slid-second background slid-button"></div>
+      <div class="slid-first"><div class="border"></div></div>
+      <div class="slid-third text flex">
+        <p class="center">
+          <span class="close-slid">X</span>
+          COMME 90% de nos clients, Vous êtes un grand groupe, une grande marque et vous avez des enjeux de communication, des besoins, des envies de faire passer vos messages.
+          <br>
+          Vos terrains de jeux SOnt :
+          <br> 
+          LA COMMUNICATION CORPORATE, LE BRAND CONTENT LA communication managériale, LA politique RSE,
+          <br>
+          La conduite du changement, LA TRANSFORMATION DIGITALE, LES RELATIONS FINANCIères ou L’ animation de votre réseau OU DE VOS  COMMUNAUTéS…
+        </p>
+      </div>
     </div>
   </div>
 
-  <div class="parallax-container parallax-nested">
+  <!-- ************************************************* VOUS ***********************************************-->
+
+  <div class="parallax-container parallax-nested slid2">
     <div id="section3" class="section no-pad-bot">
       <div class="container flex flex-column center">
         <div class="row center parallax-children" data-layer="5">
@@ -198,71 +234,121 @@
           <div class="col s12 slabo r3"><span>Envie de dire...</span></div>
         </div>
         <div class="row center parallax-children" data-layer="2">
-          <a href="#" class="butn slabo r1 slid-button"><span>Vous découvrir</span></a>
+          <a href="#" class="butn slabo r1 slid-button" data-slid="2"><span>Vous découvrir</span></a>
         </div>
       </div>
     </div>
     <div class="parallax">
-      <img src="images/bg3.png" class="parallax-bgImg" alt="Unsplashed background img 2">
+      <video playsinline muted loop>
+        <source src="video/shutterstock_v3375311.mov">
+        Not supported on your browser
+      </video>
+      <img class="no-video" src="images/bg3.png" alt="">
     </div>
     <div class="slid">
       <div class="slid-second background slid-button"></div>
       <div class="slid-first"><div class="border"></div></div>
-      <div class="slid-third text"><p><span class="close-slid"></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident tenetur, illo repellendus.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident tenetur, illo repellendus.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident tenetur, illo repellendus.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident tenetur, illo repellendus.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident tenetur, illo repellendus.</p></div>
+      <div class="slid-third text flex">
+        <p class="center">
+          <span class="close-slid">X</span>
+          COMME 90% de nos clients, Vous êtes un grand groupe, une grande marque et vous avez des enjeux de communication, des besoins, des envies de faire passer vos messages.
+          <br>
+          <br>
+          Vos terrains de jeux SOnt :
+          <br> 
+          <br>
+          LA COMMUNICATION CORPORATE, LE BRAND CONTENT LA communication managériale, LA politique RSE,
+          <br>
+          <br>
+          La conduite du changement, LA TRANSFORMATION DIGITALE, LES RELATIONS FINANCIères ou L’ animation de votre réseau OU DE VOS  COMMUNAUTéS…
+        </p>
+      </div>
     </div>  
   </div>
 
-  <div class="parallax-container parallax-nested">
-    <div id="section4" class="section no-pad-bot nav-color">
+  <!-- ************************************************* ENSEMBLE ***********************************************-->
+
+  <div class="parallax-container parallax-nested slid3">
+    <div id="section4" class="section no-pad-bot">
       <div class="container flex flex-column center">
         <div class="row center parallax-children" data-layer="4">
-          <div class="col s12 slabo r3"><span>Il est des idées</span></div>
-          <div class="col s12 slabo r3"><span>dont la rencontre est aussi présente</span></div>
-          <div class="col s12 slabo r3"><span>que celles des êtres.</span></div>
+          <div class="col s12 slabo r1"><span>Il est des idées</span></div>
+          <div class="col s12 slabo r03"><span>dont la rencontre est aussi présente</span></div>
+          <div class="col s12 slabo r2"><span>que celles des êtres.</span></div>
         </div>
         <div class="row center parallax-children" data-layer="2">
-          <a href="#" id="button-section-4" class="butn slabo r1"><span>Nous découvrir<span></a>
+          <a href="#" class="butn slabo r1 slid-button" data-slid="3">
+            <span>Nous découvrir<span>
+          </a>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="images/bg4.png" alt="Unsplashed background img 4"></div>
+    <div class="parallax">
+      <video playsinline muted loop>
+        <source src="video/3.mov">
+        Not supported on your browser
+      </video>
+      <img class="no-video" src="images/bg4.png" alt="">
+    </div>
+    <div class="slid">
+      <div class="slid-second background slid-button"></div>
+      <div class="slid-first">
+        <div class="border">
+        </div>
+      </div>
+      <div class="slid-third text flex">
+        <p class="center">
+          <span class="close-slid">X</span>
+          La rencontre crée une étincelle, une saveur, une sensation... voire un vrai film.
+          <br>
+          <br> 
+          Au risque de vous surprendre, nous ne prétendons pas être meilleurs que les autres, ni moins chers, ni les moins rapides.
+          <br> 
+          JUSTE INCARNER  VOTRE DIfférence.
+          <br>
+          <br>  
+          nous souhaitons simplement obtenir avec chacun de nos clients, avec chacun des projets menés, un éclat de satisfaction, de créativité et d’émotion.
+        </p>
+      </div>
+    </div>
   </div>
 
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
+  <div class="parallax-container parallax-nested">
+    <div id="section5" class="section no-pad-bot nav-color">
+      <div class="container flex flex-column center">
+        <div class="row center parallax-children contact" data-layer="2">
+          <div class="col s6 slabo r03">
+            <div>Contact</div>
+            <p>Un petit bonjour pour démarrer une grande relation
+            envie d'en savoir plus, unprojet, besoin d'idées...</p>
+            <p class="left">
+              16, rue de la pierre levée - 75011 PARIS 
+              <br>
+              <a href="tel:+33(0)177102307" class="Blondie">
+              +33(0)1 77 10 23 07
+              </a>
+              <br>
+              <br> 
+              <a href="mailto:contact@enviededire.com">contact@enviededire.com</a>
+              <br>
+              <br> 
+              partenaire potentiel,  talent(s)..
+              vous partagez notre vision de l'exigence et 
+              notre sens du service client, qu'avez vous envie de nous dire ? 
+              <br>
+              <br>
+              <a href="mailto:jesuisenthousiasteetjaidevraiescompetences@enviededire.com">Contact Talent</a>  
+            </p>
+          </div>
+          <div class="col s6 maps"><iframe width="100%" height="600px" src="http://www.mapi.ie/create-google-map/map.php?width=100%&amp;width=600px&amp;hl=en&amp;q=11%20rue%20de%20la%20pierre%20lev%C3%A9e%2C%20Paris+(Envie de dire)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=A&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
         </div>
       </div>
     </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>
-  </footer>
+    <div class="parallax">
+      <img src="images/bg5.png" alt="Unsplashed img 1">
+    </div> 
+  </div>
+  
 
 
   <!--  Scripts-->
