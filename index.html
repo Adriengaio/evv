@@ -1,8 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="robots" content="follow, all" />
+  <meta http-equiv="Cache-control" content="PUBLIC">
+
+  <meta name="description" content="Envie de dire, agence conseil en communication audiovisuelle. Quand tout reste à dire..." />
+  <meta name="keywords" content="film, vidéo, 3d, audiovisuel, audiovisuelle, communication, événement, event, communication, séminaire, web, internet, photos, images, production, postproduction, Production vidéo - réalisation montage 3D et post production, documentaires, réalisation, tournage, captation, jingle, clip, HD, haute définition, film institutionnel, spot publicitaire, présentation interactive, multimédia" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+
   <title>Envie de dire, strategies audio&visuelles</title>
 
   <!-- CSS  -->
@@ -10,8 +19,8 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<body>
-
+<body class="noscroll">
+  <div id="loader" class="loading"></div>
     <!-- ************************************************* MENU ***********************************************-->
 
   <div class="navbar-fixed">
@@ -128,9 +137,22 @@
           <li><a class="animOnScroll" href="#section4" >Ensemble</a></li>
           <div class="right">
             <li><a class="animOnScroll padding5" href="#section5" >Contact</a></li>
-            <li><a class="padding5" href="#sectionIcon"><i class="icon icon-vimeo"></i></a></li>
-            <li><a class="padding5" href="#sectionIcon"><i class="icon icon-fb"></i></a></li>
-            <li><a class="padding5" href="#sectionIcon"><i class="icon icon-linkedin"></i></a></li>
+            <li>
+              <a class="padding5" target="_blank" title="Regardez-nous sur Vimeo" href="https://vimeo.com/enviededire">
+                <i class="icon icon-vimeo">
+                </i>
+              </a>
+            </li>
+            <li>
+              <a class="padding5" target="_blank" title="Suivez-nous sur Facebook" href="https://www.facebook.com/pages/Envie-de-dire-CastingTalents/395520897226393">
+                <i class="icon icon-fb"></i>
+              </a>
+            </li>
+            <li>
+              <a class="padding5" target="_blank" title="Retrouvez-nous sur LinkedIn" href="https://www.linkedin.com/company/envie-de-dire">
+                <i class="icon icon-linkedin"></i>
+              </a>
+            </li>
           </div>
         </ul>
         <div class="nav-section-arrow colorized" role="navigation between section">
@@ -143,10 +165,13 @@
           <li><a class="animOnScroll closeNav" href="#section2" >Nous</a></li>
           <li><a class="animOnScroll closeNav" href="#section3" >Vous</a></li>
           <li><a class="animOnScroll closeNav" href="#section4" >Ensemble</a></li>
+          <li><a class="animOnScroll closeNav" href="#section5" >Contact</a></li>
           <li class="bottom">
-            <a class="no-padding" href="#sectionIcon"><i class="icon icon-linkedin"></i></a>
-            <a class="no-padding" href="#sectionIcon"><i class="icon icon-fb"></i></a>
-            <a class="no-padding" href="#sectionIcon"><i class="icon icon-vimeo"></i></a>
+            <a class="no-padding" target="_blank" title="Retrouvez-nous sur LinkedIn" href="https://www.linkedin.com/company/envie-de-dire">
+              <i class="icon icon-linkedin"></i>
+            </a>
+            <a class="no-padding" target="_blank" title="Suivez-nous sur Facebook" href="https://www.facebook.com/pages/Envie-de-dire-CastingTalents/395520897226393"><i class="icon icon-fb"></i></a>
+            <a class="no-padding" target="_blank" title="Regardez-nous sur Vimeo" href="https://vimeo.com/enviededire"><i class="icon icon-vimeo"></i></a>
           </li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="icon icon-menu"></i></a>
@@ -171,16 +196,17 @@
   
     <!-- ************************************************* MANIFEST ***********************************************-->
 
-  <div class="parallax-container parallax-nested slid1">
-    <div id="section1" class="section no-pad-bot">
-      <div class="container flex flex-column center">
-        <div class="row center parallax-children" data-layer="5">
-          <div class="col s12 slabo r03"><span>Manifeste</span></div>
-        </div>
-      </div>
+  <div class="parallax-container parallax-nested">
+    <div id="section1" class="section no-pad-bot nav-color">
     </div>
-    <div class="parallax">
-      <img src="images/bg1.png" alt="Unsplashed img 1">
+    <div id="manifeste" class="parallax">
+      <video class="controls">
+        <source src="video/demo.mp4">
+        <source src="video/demo.webm">
+        <source src="video/demo.ogv">
+        Not supported on your browser
+      </video>
+      <i class="icon icon-play videoPlay"></i>
     </div> 
   </div>
 
@@ -200,7 +226,9 @@
     </div>
     <div class="parallax">
       <video playsinline muted loop>
-        <source src="video/1.mov">
+        <source src="video/1.mp4">
+        <source src="video/1.webm">
+        <source src="video/1.ogv">
         Not supported on your browser
       </video>
       <img class="no-video" src="images/bg2.png" alt="">
@@ -211,13 +239,11 @@
       <div class="slid-third text flex">
         <p class="center">
           <span class="close-slid">X</span>
-          COMME 90% de nos clients, Vous êtes un grand groupe, une grande marque et vous avez des enjeux de communication, des besoins, des envies de faire passer vos messages.
+          DEPUIS 2005, enviededire rassemble des talents dans le conseil stratégique, l’écriture, la réalisation, la production, la post-production ET la diffusion de vos messages audiovisuels internes et externes.
           <br>
-          Vos terrains de jeux SOnt :
-          <br> 
-          LA COMMUNICATION CORPORATE, LE BRAND CONTENT LA communication managériale, LA politique RSE,
+          Nous travaillons sur des projets audacieux, créatifs, scénarisés, à la technique parfaite -sans fausse note- ET à la hauteur de vos enjeux.
           <br>
-          La conduite du changement, LA TRANSFORMATION DIGITALE, LES RELATIONS FINANCIères ou L’ animation de votre réseau OU DE VOS  COMMUNAUTéS…
+          NOTRE capacité à vous séduire finira par vous convaincre.
         </p>
       </div>
     </div>
@@ -229,8 +255,8 @@
     <div id="section3" class="section no-pad-bot">
       <div class="container flex flex-column center">
         <div class="row center parallax-children" data-layer="5">
-          <div class="col s12 slabo r1"><span>Est vous ?</span></div>
-          <div class="col s12 slabo r2"><span>Qu'avez vous ?</span></div>
+          <div class="col s12 slabo r1"><span>Et vous ?</span></div>
+          <div class="col s12 slabo r2"><span>Qu'avez-vous</span></div>
           <div class="col s12 slabo r3"><span>Envie de dire...</span></div>
         </div>
         <div class="row center parallax-children" data-layer="2">
@@ -240,7 +266,9 @@
     </div>
     <div class="parallax">
       <video playsinline muted loop>
-        <source src="video/shutterstock_v3375311.mov">
+        <source src="video/2.mp4">
+        <source src="video/2.webm">
+        <source src="video/2.ogv">
         Not supported on your browser
       </video>
       <img class="no-video" src="images/bg3.png" alt="">
@@ -257,7 +285,7 @@
           Vos terrains de jeux SOnt :
           <br> 
           <br>
-          LA COMMUNICATION CORPORATE, LE BRAND CONTENT LA communication managériale, LA politique RSE,
+          LA COMMUNICATION CORPORATE, LE BRAND CONTENT, LA communication managériale, LA politique RSE,
           <br>
           <br>
           La conduite du changement, LA TRANSFORMATION DIGITALE, LES RELATIONS FINANCIères ou L’ animation de votre réseau OU DE VOS  COMMUNAUTéS…
@@ -274,18 +302,20 @@
         <div class="row center parallax-children" data-layer="4">
           <div class="col s12 slabo r1"><span>Il est des idées</span></div>
           <div class="col s12 slabo r03"><span>dont la rencontre est aussi présente</span></div>
-          <div class="col s12 slabo r2"><span>que celles des êtres.</span></div>
+          <div class="col s12 slabo r2"><span>que celle des êtres.</span></div>
         </div>
         <div class="row center parallax-children" data-layer="2">
           <a href="#" class="butn slabo r1 slid-button" data-slid="3">
-            <span>Nous découvrir<span>
+            <span>Se découvrir<span>
           </a>
         </div>
       </div>
     </div>
     <div class="parallax">
       <video playsinline muted loop>
-        <source src="video/3.mov">
+        <source src="video/3.mp4">
+        <source src="video/3.webm">
+        <source src="video/2.ogv">
         Not supported on your browser
       </video>
       <img class="no-video" src="images/bg4.png" alt="">
@@ -314,13 +344,12 @@
   </div>
 
   <div class="parallax-container parallax-nested">
-    <div id="section5" class="section no-pad-bot nav-color">
+    <div id="section5" class="section no-pad-bot">
       <div class="container flex flex-column center">
         <div class="row center parallax-children contact" data-layer="2">
           <div class="col s6 slabo r03">
             <div>Contact</div>
-            <p>Un petit bonjour pour démarrer une grande relation
-            envie d'en savoir plus, unprojet, besoin d'idées...</p>
+            <p>Envie d'en savoir plus, un projet, besoin d'idées, échanger autour d'un café...</p>
             <p class="left">
               16, rue de la pierre levée - 75011 PARIS 
               <br>
@@ -329,7 +358,7 @@
               </a>
               <br>
               <br> 
-              <a href="mailto:contact@enviededire.com">contact@enviededire.com</a>
+              <a href="mailto:contact@enviededire.com">hello@enviededire.com</a>
               <br>
               <br> 
               partenaire potentiel,  talent(s)..
@@ -340,18 +369,25 @@
               <a href="mailto:jesuisenthousiasteetjaidevraiescompetences@enviededire.com">Contact Talent</a>  
             </p>
           </div>
-          <div class="col s6 maps"><iframe width="100%" height="600px" src="http://www.mapi.ie/create-google-map/map.php?width=100%&amp;width=600px&amp;hl=en&amp;q=11%20rue%20de%20la%20pierre%20lev%C3%A9e%2C%20Paris+(Envie de dire)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=A&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+          <!--<div class="col s6 maps"><iframe width="100%" height="600px" src="http://www.mapi.ie/create-google-map/map.php?width=100%&amp;width=600px&amp;hl=en&amp;q=16%20rue%20de%20la%20pierre%20lev%C3%A9e%2C%20Paris+(Envie de dire)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=A&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>-->
         </div>
       </div>
     </div>
     <div class="parallax">
-      <img src="images/bg5.png" alt="Unsplashed img 1">
+      <video playsinline muted loop>
+        <source src="video/4.mp4">
+        <source src="video/4.webm">
+        <source src="video/2.ogv">
+        Not supported on your browser
+      </video>
+      <img class="no-video" src="images/bg5.png" alt="Unsplashed img 1">
     </div> 
   </div>
   
 
 
   <!--  Scripts-->
+  <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/animatescroll.js"></script>

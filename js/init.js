@@ -45,8 +45,13 @@
             var children = $( $img.parent().parent() ).find('.parallax-children');
             if(children.length) updateChildren(children, percentScrolled);
             $img.data('parallax',parallax);
-            $img.css('transform', "translate3D(-50%," + parallax + "px, 0)");
-            if($this.children("video").length){
+            if($this.children('video').length && window.innerWidth < 970){
+              parallax = 50 + (parallax/100)
+              $img.css('transform', "translate3D(-50%,-" + parallax + "%, 0)");
+            }else{
+              $img.css('transform', "translate3D(-50%," + parallax + "px, 0)");
+            }
+            if($this.children("video").length && $this.attr('id') !== 'manifeste'){
               $this.children("video")[0].play();
             }
             actualSection = $($this.parent());
@@ -63,22 +68,18 @@
           if (this.complete) $(this).trigger("load");
         });
 
-        if(window.innerWidth > 992){
-          $(window).resize(function() {
+      
+        $this.children("video").one("canplay", function() {
+          updateParallax(true);
+        }).each(function() {
+          if (this.complete) $(this).trigger("load");
+        });
+
+        $(window).resize(function() {
             window_width = $(window).width();
             updateParallax(false);
           });
-          $this.children("video").one("canplay", function() {
-            updateParallax(true);
-          }).each(function() {
-            if (this.complete) $(this).trigger("load");
-          });
-        }else{
-           $(window).resize(function(e) {
-            e.preventDefault();
-          });
-          $this.children('video').remove();
-        }
+
         $(window).scroll(function() {
           window_width = $(window).width();
           updateParallax(false);
@@ -105,15 +106,15 @@
       return this.each(function(i) {
         var $this = $(this);
         function checkScroll() {
-          var bottom = $this.offset().top + $this.height();
-          var top = $this.offset().top;
-          if (top < scrollTop && bottom > scrollTop){
+          var bottom = $this.offset().top + $this.height() - 10;
+          var top = $this.offset().top -9;
+          if (top <= scrollTop && bottom >= scrollTop){
             if(!($('.nav-wrapper').hasClass('colorized'))){
               $('.nav-wrapper').addClass('colorized');
               $('#logo-container').addClass('colorized');
               $('.nav-section-arrow').addClass('colorized');
             }
-          }else if(bottom < scrollTop){
+          }else if(bottom - 10 < scrollTop){
             if($('.nav-wrapper').hasClass('colorized')){
               $('.nav-wrapper').removeClass('colorized');
               $('#logo-container').removeClass('colorized');
@@ -137,6 +138,7 @@
           $('.slid').removeClass('slided');
           var slid = $this.parents().find('.slid'+$this.data('slid'));
           $(slid).addClass('slided');
+           $('.nav-section-arrow').addClass('slided');
         });
       });
     };
@@ -147,6 +149,7 @@
         var $this = $(this);
         function closeAll () {
           $('.parallax-container').removeClass('slided');
+          $('.nav-section-arrow').removeClass('slided');
         }
         $this.on("click", function(e) {
           e.preventDefault();
@@ -169,12 +172,28 @@
     };
 }( jQuery ));
 ;(function ($) {
+    $.fn.controlVideo = function () {
+      return this.each(function(i) {
+        var $this = $(this);
+        $this.on("click", function(e) {
+          $(this).hide();
+          $(this).prev('video').trigger('play');
+          $(this).prev('video').on('click',function(){
+            $(this).trigger('pause');
+            $(this).next('.videoPlay').show();
+          });
+        });
+      });
+    };
+}( jQuery ));
+;(function ($) {
     $.fn.navArrow = function () {
       return this.each(function(i) {
         var $this = $(this);
         var lastSection = $('.section').last().attr('id').replace('section','');
         var firstSection = $('.section').first().attr('id').replace('section','');
         $this.on("click", function(e) {
+          console.log(actualId);
           var actualId = $(actualSection.find(".section")).attr('id').replace('section','');
           ($this.data('direction')) ? actualId ++ : actualId --;
           if( actualId != undefined && 
@@ -186,9 +205,42 @@
     };
 }( jQuery ));
 
+var loaded = [];
+  function video () {
+    window.scrollTo(0, 0);
+    if(window.innerWidth < 992){
+      $('video').each(function  (i) {
+        $this = $(this);
+            var newSrc = $this.children('source').attr('src').replace('.','_light.');
+            $this.children('source').attr('src',newSrc);
+            $this.load();
+            $this.on('canplay',function  () {
+              canPlay(this);
+            });
+      });
+    }else{
+      $('video').each(function  (i) {
+        $this = $(this);
+        $this.load();
+        $this.on('canplay',function  () {
+          canPlay(this);
+        });
+      });
+    }
+  }
+  function canPlay (element) {
+    var $video = $('video');
+    loaded.push(element);
+    if(loaded.length === $video.length){
+      $('#loader').removeClass('loading');
+      $('body').removeClass('noscroll');
+    }
+  }
+
 (function($){
   var actualSection;
   $(function(){
+    video();
     $('.button-collapse').sideNav();
     $('.nav-arrow').navArrow();
     $('.parallax').parallaxCustom();
@@ -197,5 +249,6 @@
     $('.close-slid').closeSlid();
     $('.closeNav').closeNav();
     $('.animOnScroll').animOnScroll();
+    $('.videoPlay').controlVideo();
   }); // end of document ready
 })(jQuery); // end of jQuery name space

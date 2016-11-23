@@ -79,7 +79,9 @@
 .icon-vimeo:before {
   content: "\65";
 }
+.icon-play:before {
+  content: "\66";
+}
 .icon-menu:before {
   content: "\67";
 }
-
