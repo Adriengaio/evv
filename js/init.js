@@ -1,4 +1,4 @@
-;(function ($) {
+(function ($) {
 
     $.fn.parallaxCustom = function () {
       var window_width = $(window).width();
@@ -52,11 +52,11 @@
               $img.css('transform', "translate3D(-50%," + parallax + "px, 0)");
             }
             if($this.children("video").length && $this.attr('id') !== 'manifeste'){
-              $this.children("video")[0].play();
+              $this.children("video").trigger('play');
             }
             actualSection = $($this.parent());
           }else if($this.children("video").length){
-            $this.children("video")[0].pause();         
+            $this.children("video").trigger('pause');         
           }
         }
 
@@ -69,7 +69,7 @@
         });
 
       
-        $this.children("video").one("canplay", function() {
+        $this.children("video").one("canplaythrough", function() {
           updateParallax(true);
         }).each(function() {
           if (this.complete) $(this).trigger("load");
@@ -172,28 +172,12 @@
     };
 }( jQuery ));
 ;(function ($) {
-    $.fn.controlVideo = function () {
-      return this.each(function(i) {
-        var $this = $(this);
-        $this.on("click", function(e) {
-          $(this).hide();
-          $(this).prev('video').trigger('play');
-          $(this).prev('video').on('click',function(){
-            $(this).trigger('pause');
-            $(this).next('.videoPlay').show();
-          });
-        });
-      });
-    };
-}( jQuery ));
-;(function ($) {
     $.fn.navArrow = function () {
       return this.each(function(i) {
         var $this = $(this);
         var lastSection = $('.section').last().attr('id').replace('section','');
         var firstSection = $('.section').first().attr('id').replace('section','');
         $this.on("click", function(e) {
-          console.log(actualId);
           var actualId = $(actualSection.find(".section")).attr('id').replace('section','');
           ($this.data('direction')) ? actualId ++ : actualId --;
           if( actualId != undefined && 
@@ -204,17 +188,37 @@
       });
     };
 }( jQuery ));
-
-var loaded = [];
+;(function ($) {
+    $.fn.videoPlay = function () {
+      return this.each(function(i) {
+        var $this = $(this);
+        $this.on("click", function(e) {
+          var $this = $(this);
+          var $parent = $($this.parent());
+          var video = $parent.find('video')[0];
+          if(!video.played.length || video.paused){
+            $(video).trigger('play');
+            $this.hide();
+          }else{
+            $(video).trigger('pause');
+            $this.show();
+          }
+        });
+      });
+    };
+}( jQuery ));
   function video () {
     window.scrollTo(0, 0);
     if(window.innerWidth < 992){
       $('video').each(function  (i) {
         $this = $(this);
-            var newSrc = $this.children('source').attr('src').replace('.','_light.');
-            $this.children('source').attr('src',newSrc);
+            
+            $this.children('source').each(function(){
+              var newSrc = $(this).attr('src').replace('.','_light.');
+              $(this).attr('src',newSrc);
+            });
             $this.load();
-            $this.on('canplay',function  () {
+            $this.on('canplaythrough',function  () {
               canPlay(this);
             });
       });
@@ -222,7 +226,7 @@ var loaded = [];
       $('video').each(function  (i) {
         $this = $(this);
         $this.load();
-        $this.on('canplay',function  () {
+        $this.on('canplaythrough',function  () {
           canPlay(this);
         });
       });
@@ -230,11 +234,20 @@ var loaded = [];
   }
   function canPlay (element) {
     var $video = $('video');
-    loaded.push(element);
-    if(loaded.length === $video.length){
-      $('#loader').removeClass('loading');
-      $('body').removeClass('noscroll');
-    }
+    $(element).parent().removeClass('loading');
+    $(element).on('click',function () {
+      if(!this.played.length || this.paused){
+        $(this).trigger('play');
+        if($(this).parent().find('.videoPlay').length){
+          $(this).parent().find('.videoPlay').hide();
+        }
+      }else{
+        $(this).trigger('pause');
+        if($(this).parent().find('.videoPlay').length){
+          $(this).parent().find('.videoPlay').show();
+        }
+      }
+    });
   }
 
 (function($){
@@ -249,6 +262,6 @@ var loaded = [];
     $('.close-slid').closeSlid();
     $('.closeNav').closeNav();
     $('.animOnScroll').animOnScroll();
-    $('.videoPlay').controlVideo();
+    $('.videoPlay').videoPlay();
   }); // end of document ready
 })(jQuery); // end of jQuery name space

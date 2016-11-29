@@ -16,11 +16,10 @@
 
   <!-- CSS  -->
   <link href="css/font-custom.css" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<body class="noscroll">
-  <div id="loader" class="loading"></div>
+<body>
     <!-- ************************************************* MENU ***********************************************-->
 
   <div class="navbar-fixed">
@@ -189,7 +188,7 @@
         </div>
       </div>
     </div> 
-    <div class="parallax">
+    <div class="parallax loading">
       <img src="images/bg.png" alt="Unsplashed background img 0">
     </div>
   </div>
@@ -199,13 +198,14 @@
   <div class="parallax-container parallax-nested">
     <div id="section1" class="section no-pad-bot nav-color">
     </div>
-    <div id="manifeste" class="parallax">
-      <video class="controls">
+    <div id="manifeste" class="parallax loading">
+      <video -webkit-playsinline playsinline>
         <source src="video/demo.mp4">
         <source src="video/demo.webm">
         <source src="video/demo.ogv">
         Not supported on your browser
       </video>
+      <img class="no-video" src="images/bg1.png" alt="Unsplashed background img 1">
       <i class="icon icon-play videoPlay"></i>
     </div> 
   </div>
@@ -224,14 +224,14 @@
         </div>
       </div>
     </div>
-    <div class="parallax">
-      <video playsinline muted loop>
+    <div class="parallax loading">
+      <video -webkit-playsinline playsinline muted loop>
         <source src="video/1.mp4">
         <source src="video/1.webm">
         <source src="video/1.ogv">
         Not supported on your browser
       </video>
-      <img class="no-video" src="images/bg2.png" alt="">
+      <img class="no-video" src="images/bg2.png" alt="Unsplashed background img 2">
     </div> 
     <div class="slid">
       <div class="slid-second background slid-button"></div>
@@ -264,14 +264,14 @@
         </div>
       </div>
     </div>
-    <div class="parallax">
-      <video playsinline muted loop>
+    <div class="parallax loading">
+      <video -webkit-playsinline playsinline muted loop>
         <source src="video/2.mp4">
         <source src="video/2.webm">
         <source src="video/2.ogv">
         Not supported on your browser
       </video>
-      <img class="no-video" src="images/bg3.png" alt="">
+      <img class="no-video" src="images/bg3.png" alt="Unsplashed background img 3">
     </div>
     <div class="slid">
       <div class="slid-second background slid-button"></div>
@@ -311,14 +311,14 @@
         </div>
       </div>
     </div>
-    <div class="parallax">
-      <video playsinline muted loop>
+    <div class="parallax loading">
+      <video muted loop>
         <source src="video/3.mp4">
         <source src="video/3.webm">
         <source src="video/2.ogv">
         Not supported on your browser
       </video>
-      <img class="no-video" src="images/bg4.png" alt="">
+      <img class="no-video" src="images/bg4.png" alt="Unsplashed background img 4">
     </div>
     <div class="slid">
       <div class="slid-second background slid-button"></div>
@@ -373,14 +373,14 @@
         </div>
       </div>
     </div>
-    <div class="parallax">
-      <video playsinline muted loop>
+    <div class="parallax loading">
+      <video -webkit-playsinline  playsinline muted loop>
         <source src="video/4.mp4">
         <source src="video/4.webm">
         <source src="video/2.ogv">
         Not supported on your browser
       </video>
-      <img class="no-video" src="images/bg5.png" alt="Unsplashed img 1">
+      <img class="no-video" src="images/bg5.png" alt="Unsplashed background img 5">
     </div> 
   </div>
   
@@ -388,8 +388,7 @@
 
   <!--  Scripts-->
   <script src="js/jquery-2.1.1.min.js"></script>
-  <script src="js/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
+  <script src="js/vendor.min.js"></script>
   <script src="js/animatescroll.js"></script>
   <script src="js/init.js"></script>
 

@@ -36,8 +36,11 @@ body.noscroll{
 nav{
   box-shadow: none;
 }
-.parallax img.no-video{
+.parallax.loading video{
     display: none;
+}
+.parallax.loading img{
+  display: block;
 }
 nav ul a{
   text-transform: uppercase;
@@ -110,6 +113,10 @@ nav ul.center li:hover a{
 }
 .slid .slid-first, .slid .slid-second, .slid .slid-third{
   transform: translate3d(100%,0,0);
+  -webkit-transform: translate3d(100%,0,0);
+  -ms-transform: translate3d(100%,0,0);
+  -o-transform: translate3d(100%,0,0);
+  transform: translate3d(100%,0,0);
   position: absolute;
   top: 0;
   left: 0;
@@ -117,15 +124,24 @@ nav ul.center li:hover a{
   height: 100%;
 }
 .slided .slid-first, .slided .slid-second, .slided .slid-third{
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
 .slid-first{
-  transition: transform 0.8s ease;
+  -webkit-transition: transform 0.8s ease;
+   -o-transition: transform 0.8s ease;
+   transition: transform 0.8s ease;
 }
 .slid-second{
+  -webkit-transition: transform 0.6s 0.2s ease;
+  -o-transition: transform 0.6s 0.2s ease;
   transition: transform 0.6s 0.2s ease;
 }
 .slid-third{
+  -webkit-transition:  transform 0.3s 0.3s ease;
+  -o-transition:  transform 0.3s 0.3s ease;
   transition: transform 0.3s 0.3s ease;
 }
 .slid .border, .slid .text{
@@ -170,6 +186,8 @@ nav ul.center li:hover a{
   cursor: pointer;
   z-index: 2;
   opacity: 1;
+  -webkit-transition:  opacity 0.3s ease;
+  -o-transition:  opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
 .nav-section-arrow.slided .nav-arrow{
@@ -204,11 +222,17 @@ nav ul.center li:hover a{
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+  -webkit-transition:  filter 0.3s ease;
+  -o-transition:  filter 0.3s ease;
   transition: filter 0.3s ease;
 }
 .slided video{
+  -webkit-transition: filter 0.3s 0.58s ease;
+  -o-transition: filter 0.3s 0.58s ease;
   transition: filter 0.3s 0.58s ease;
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  -webkit-filter:  grayscale(100%);
+  -o-filter:  grayscale(100%);
   filter: grayscale(100%);
 }
 
@@ -284,6 +308,10 @@ p {
 }
 .flex-column.center.flex{
   height: calc(100vh - 1em);
+  -webkit-flex-direction:  column;
+  -moz-flex-direction:  column;
+  -ms-flex-direction:  column;
+  -o-flex-direction:  column;
   flex-direction: column;
   align-content: center;
   justify-content: center;
@@ -299,10 +327,14 @@ p {
 
 .parallax-children{
   z-index: 0;
+  -webkit-transition: opacity 0.3s 0.58s ease;
+  -o-transition: opacity 0.3s 0.58s ease;
   transition: opacity 0.3s 0.58s ease;
   opacity: 1;
 }
 .slided .parallax-children{
+  -webkit-transition:  opacity 0s 0s ease;
+  -o-transition:  opacity 0s 0s ease;
   transition: opacity 0s 0s ease;
   z-index: -2;
    opacity: 0;
@@ -372,13 +404,19 @@ p {
     z-index: 996;
   }
   .slid .slid-first, .slid .slid-second, .slid .slid-third{
-    transform: translate3d(110%,0,0);
+    -webkit-transform:  translate3d(110%,0,0);
+    -ms-transform:  translate3d(110%,0,0);
+    -o-transform:  translate3d(110%,0,0);
+    transform:  translate3d(110%,0,0);
   }
   .navbar-fixed nav {
     max-width: 50%;
   }
   .slided .slid-first, .slided .slid-second, .slided .slid-third{
-    transform: translate3d(0%,0,0);
+    -webkit-transform:  translate3d(0%,0,0);
+    -ms-transform:  translate3d(0%,0,0);
+    -o-transform:  translate3d(0%,0,0);
+    transform:  translate3d(0%,0,0);
   }
   .contact .maps{
     display: none;
@@ -436,6 +474,8 @@ p {
     top: 50%; 
     left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     min-width: 100%; 
     min-height: 100%; 
@@ -454,6 +494,7 @@ p {
     top: calc(100vh - 50px);
     height: 50px;
     display: flex;
+    -ms-align-items: center;
     align-items: center;
     width: 100%;
     overflow: hidden;
@@ -488,7 +529,7 @@ p {
     line-height: 2.5vw;
   }
   .slid .text p{
-    font-size: 1.85vw;
+    font-size: 1.85vw !important;
     line-height: 2.7vw;
   }
   .slid .text p{
